@@ -130,15 +130,16 @@
           </div>
           <div class="bnr-btm-left two grid">
             <figure class="effect-ming wow fadeInRight animated animated" data-wow-delay=".5s">
-              <img src="images/Comic/xkcd.jpg" alt="img09"/>
+              <img id="xkcd_itag" src="images/Comic/xkcd.jpg" alt="img09"/>
               <figcaption>
                 <h3><span>XKCD</span></h3>
                 <p>XKCD-A webcomic of romance, sarcasm, math, and language.</p>
-                <a target="_blank" href="https://xkcd.com/">xkcd.com</a>
+                <a id="xkcd_atag" target="_blank" href="https://xkcd.com/">xkcd.com</a>
               </figcaption>			
             </figure>
 
           </div>
+
 
           <div class="clearfix"></div>
         </div>
@@ -205,11 +206,12 @@
     <div class="portfolio" id="gallery">
       <div class="wrap">
         <h3 class="tittle wow fadeInUp animated animated" data-wow-delay=".5s">My Illustrations</h3>
+          <h4 align="center"><strong>(You need access to <a href="https://www.pixiv.net/member.php?id=4648191">PIXIV</a> if you want to see the high resolution image)</strong></h4>
         <div class="portfolio-top">
           <div class="col-md-4 grid slideanim wow fadeInLeft animated animated animated" data-wow-delay=".5s">
             <figure class="effect-jazz">
               <a href="#portfolioModal1"  data-toggle="modal">
-                <img src="https://i.pximg.net/c/600x600/img-master/img/2018/05/15/01/42/46/68753642_p0_master1200.jpg" alt="img25" class="img-responsive"/>
+                <img src="images/illus/violet.jpg" alt="Violet Evergarden" class="img-responsive"/>
                 <div class="img-responsive">
                 </div>
                 <figcaption>
@@ -288,6 +290,7 @@
       </div>
     </div>
     <!--//portfolio-->
+
 
       <!--
         <div class="staff" id="team">
@@ -662,7 +665,6 @@
             <p><a href="#">Twitter</a>, may be the more visual platform for education group.</p>
             <span>4 day ago</span>
           </div>
-
           <div class="clearfix"></div>
         </div>
       </div>
@@ -687,7 +689,6 @@
     </div>
     
     <!--//map-->
-    -->
     <!--//contact-->
 
     <!--copy-right-->
@@ -721,7 +722,19 @@
     <script src="js/bootstrap.js"></script>
     <!-- //for bootstrap working -->
     <!-- Put this at the end so that contents will not stuck -->
-
-
+        <script type="text/javascript">
+            var xkcd_infos = [
+              {"num":162,"img":"https://imgs.xkcd.com/comics/angular_momentum.jpg"}, 
+              {"num":1990,"img":"https://imgs.xkcd.com/comics/driving_cars.png"}, 
+              {"num":1977,"img":"https://imgs.xkcd.com/comics/paperwork.png"},
+              {"num":1359,"img":"https://imgs.xkcd.com/comics/phone_alarm.png"},
+              {"num":1281,"img":"https://imgs.xkcd.com/comics/minifigs.png"}
+            ];
+            var thecomic = xkcd_infos[Math.floor(Math.random() * xkcd_infos.length)];
+            var atag = document.getElementById('xkcd_atag');
+            var itag = document.getElementById('xkcd_itag');
+            atag.setAttribute('href', 'https://xkcd.com/' + thecomic.num);
+            itag.setAttribute('src', thecomic.img);
+        </script>
   </body>
 </html>
